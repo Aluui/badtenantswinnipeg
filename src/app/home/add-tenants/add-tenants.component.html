@@ -1,0 +1,67 @@
+<div class="wrapper">
+  <div class="page-header page-header-small">
+    <div
+      class="page-header-image rellax-header"
+      data-rellax-speed="-8"
+      style="background-image: url('assets/img/bg6.jpg');"
+    ></div>
+    <div class="container">
+      <div class="content-center">
+        <h1 class="title">Bad Tenant Finder Winnipeg</h1>
+        <sub
+          >Powered By
+          <a href="https://www.facebook.com/aluui" target="_blank"
+            >Aluui Web Solutions</a
+          ></sub
+        >
+        <div class="text-center">
+          <a
+            href="https://www.facebook.com/aluui"
+            target="_blank"
+            class="btn btn-primary btn-icon btn-round"
+          >
+            <i class="fab fa-facebook-square"></i>
+          </a>
+          <a
+            href="https://twitter.com/aluuiws"
+            target="_blank"
+            class="btn btn-primary btn-icon btn-round"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 ml-auto mr-auto text-center">
+          <h2 class="title">Bulk Add Tenants</h2>
+        </div>
+        <div class="col-md-12">
+          <textarea
+            type="text"
+            name="tenantlist"
+            [(ngModel)]="tenantlist"
+            placeholder="Tenant Names"
+            class="form-control"
+          ></textarea>
+        </div>
+        <button
+          _ngcontent-aam-c132=""
+          class="btn btn-primary btn-lg"
+          (click)="addTenants()"
+        >
+          Add Tenants
+        </button>
+      </div>
+    </div>
+
+    <div *ngIf="done" class="text-warning">
+      Tenants have been added successfully
+    </div>
+
+    <app-footer></app-footer>
+  </div>
+</div>

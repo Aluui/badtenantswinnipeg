@@ -1,0 +1,74 @@
+<div class="wrapper">
+  <div class="page-header page-header-small">
+    <div
+      class="page-header-image rellax-header"
+      data-rellax-speed="-8"
+      style="background-image: url('assets/img/bg6.jpg');"
+    ></div>
+    <div class="container">
+      <div class="content-center">
+        <h1 class="title">Bad Tenant Finder Winnipeg</h1>
+        <sub
+          >Powered By
+          <a href="https://www.facebook.com/aluui" target="_blank"
+            >Aluui Web Solutions</a
+          ></sub
+        >
+        <div class="text-center">
+          <a
+            href="https://www.facebook.com/aluui"
+            target="_blank"
+            class="btn btn-primary btn-icon btn-round"
+          >
+            <i class="fab fa-facebook-square"></i>
+          </a>
+          <a
+            href="https://twitter.com/aluuiws"
+            target="_blank"
+            class="btn btn-primary btn-icon btn-round"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section section-about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 ml-auto mr-auto text-center">
+          <h2 class="title">Tenant Search by First and Last Names</h2>
+        </div>
+        <div class="col-md-12 row justify-center">
+          <input
+            type="text"
+            name="firstname"
+            [(ngModel)]="firstname"
+            placeholder="Name"
+            class="form-control col-md-6"
+            (ngModelChange)="filterTenants()"
+          />
+        </div>
+
+        <div class="col-md-12 ml-auto mr-auto text-center">
+          <h2 class="title tenant-results">Results Are Shown Below</h2>
+        </div>
+
+        <div
+          class="col-md-12 row justify-between allow-scroll"
+          *ngIf="filteredTenants; else noresults"
+        >
+          <div class="col-sm-5 card" *ngFor="let tenant of filteredTenants">
+            <app-single-tenant [tenant]="tenant"></app-single-tenant>
+          </div>
+
+          <ng-template #noresults>
+            No tenants found with the name
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </div>
+</div>
