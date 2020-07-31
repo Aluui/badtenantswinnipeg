@@ -56,15 +56,15 @@
 
         <div
           class="col-md-12 row justify-between allow-scroll"
-          *ngIf="filteredTenants; else noresults"
+          *ngIf="filteredTenants"
         >
           <div class="col-sm-5 card" *ngFor="let tenant of filteredTenants">
             <app-single-tenant [tenant]="tenant"></app-single-tenant>
           </div>
+        </div>
 
-          <ng-template #noresults>
-            No tenants found with the name
-          </ng-template>
+        <div *ngIf="filteredTenants">
+          No tenants found with the name
         </div>
       </div>
     </div>
